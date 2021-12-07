@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   public isLoginPage: boolean
   error: string
   isLoading: boolean
-  hide: boolean = true
 
 
 
