@@ -1,0 +1,37 @@
+    <div class="tab-wrapper mat-elevation-z0 mt-5">
+      <table mat-table [dataSource]="employees">
+        <!-- Name Column -->
+        
+        <ng-container matColumnDef="name" class="mat-column-name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element" routerLink="/employees/{{element.id}}" style="cursor: pointer;" class="t-row">{{element.value.firstName}} {{element.value.lastName}}</td>
+        </ng-container>
+        
+        <!-- Weight Column -->
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef> Role  </th>
+          <td mat-cell *matCellDef="let element" class="t-row"> {{element.value.role}}</td>
+        </ng-container> 
+        
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="salary">
+        <th mat-header-cell *matHeaderCellDef> Salary </th>
+        <td mat-cell *matCellDef="let element" class="t-row">{{element.value.salary|currency:"&#8358;"}}</td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element" class="t-row"> {{element.paymentStatus}}</td>
+      </ng-container>
+      
+      
+      <ng-container matColumnDef="pay">
+        <th mat-header-cell *matHeaderCellDef> Pay </th>
+        <td mat-cell *matCellDef="let element" >
+          <payment-paystack-button (onRefreshEmployeeList)="updateEmployeeList($event)"  [email]="element.value.email" [amount]="element.value.salary * 100" [firstName]="element.value.firstName" [lastName]="element.value.lastName" [userId]="element.id">
+          </payment-paystack-button></td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  

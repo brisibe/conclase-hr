@@ -1,0 +1,24 @@
+<mat-list class="mt-5" >
+<mat-card *ngFor="let employee of employeelist; trackBy:trackById" class="mb-2 mat-elevation-z0">
+  
+  <mat-list-item  >
+    <img matListAvatar src={{employee.value.avatar}} alt={{employee.value.firstName}} />
+    
+    <h3 matLine routerLink="/employees/{{employee.id}}" style="cursor: pointer;"> {{employee.value.firstName}} {{employee.value.lastName}} </h3>
+
+    <p matLine>
+      <span class="text-opacity-75 role">{{employee.value.role}} </span>
+    </p>
+
+   <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon>
+  
+    <mat-menu #menu="matMenu">
+ <button mat-menu-item (click)="getProfile(employee.id)">Profile</button>
+    <button mat-menu-item (click)="onDelete(employee.id)" >Delete</button>
+    </mat-menu>
+
+  </button>
+  </mat-list-item>
+ 
+</mat-card>
+  </mat-list>

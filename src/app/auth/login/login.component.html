@@ -1,0 +1,72 @@
+<div class="wrapper">
+
+<form [formGroup]="loginForm" *ngIf="isLoginPage" (ngSubmit)="onLoginSubmit()" autocomplete="off">
+  <mat-card class="loginwrapper">
+    <mat-card-header>
+      <mat-card-title>Conclase HR</mat-card-title>
+    </mat-card-header>
+    <p *ngIf ="error" class="small text-danger">{{error}}</p>
+    <mat-card-content>
+        
+        <div class="col">
+          <mat-form-field class="full-width" autocomplete=false>
+            <input matInput placeholder="Email" formControlName="email"  type="email">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="password" formControlName="password" [type]="hide ? 'password' : 'text'">
+
+            <button mat-icon-button matSuffix class="opacity-75" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+
+          </mat-form-field>
+      </div>
+      <div class="small">Don't have an account? <span class="isLogin" (click)="isLoginPage = false">Register</span></div>
+      
+    </mat-card-content>
+    <button mat-raised-button color="primary" loading type="submit" [disabled]="loginForm.invalid || isLoading">Sign In</button>
+    <mat-card-actions>
+
+    </mat-card-actions>
+  </mat-card>
+</form>
+<form [formGroup]="registerForm" *ngIf="!isLoginPage" (ngSubmit)="onRegisterSubmit()">
+  <mat-card class="loginwrapper">
+    <mat-card-header>
+      <mat-card-title>Conclase HR</mat-card-title>
+    </mat-card-header>
+    <p *ngIf ="error" class="small text-danger">{{error}}</p>
+
+    <mat-card-content>
+        
+        <div class="col">
+          <mat-form-field class="full-width" >
+            <input matInput placeholder="Username" formControlName="username"  type="text">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width" autocomplete=false>
+            <input matInput placeholder="Email" formControlName="email"  type="email">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="password" formControlName="password" type="password">
+          </mat-form-field>
+      </div>
+
+      <div class="small">Already have an account? <span class="isLogin" (click)="isLoginPage = true">Sign In</span></div>
+
+      
+    </mat-card-content>
+    <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid || isLoading">Register</button>
+    <mat-card-actions>
+
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+
+</div>

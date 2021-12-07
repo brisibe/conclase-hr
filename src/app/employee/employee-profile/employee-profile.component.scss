@@ -1,0 +1,55 @@
+$xm-screen: 576px;
+$sm-screen: 768px;
+$md-screen: 992px;
+$lg-screen: 1200px;
+
+.profile-section {
+  min-height: 100vh;
+}
+.header {
+  background-color: #ffff;
+  color: #195470;
+  width: 100%;
+}
+.small {
+  font-size: smaller;
+}
+.image-container {
+  position: relative;
+}
+.file-upload {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+input[type="file"] {
+  display: none;
+}
+
+.mat-icon-phone {
+  font-size: 16px;
+}
+.mat-icon-email {
+  font-size: 16px;
+}
+
+@media (min-width: $md-screen) {
+  .info-section {
+    background-color: pink;
+  }
+  .header {
+    width: 100%;
+  }
+}
+
+// _____________
+
+.avatar-profile {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+}

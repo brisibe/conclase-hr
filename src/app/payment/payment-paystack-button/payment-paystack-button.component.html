@@ -1,0 +1,12 @@
+    <angular4-paystack
+    [email] = 'email'
+    [amount] = 'amount'
+    [ref]="reference"
+    [channels]="['bank']"
+    (onClose)="paymentCancel()"
+    (callback)="paymentDone($event)"
+    type = "button"
+     class="mat-flat-button mat-primary"
+    >
+    Pay salary
+    </angular4-paystack>

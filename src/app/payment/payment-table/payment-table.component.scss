@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .t-row {
+    font-size: smaller;
+    padding: 10px;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .mat-header-row {
+    text-align: center;
+  }
+
+  .tab-wrapper {
+    min-height: 90vh;
+    background-color: #f7f9fc;
+  }
+}
+
+// $xm-screen: 576px;
+// $sm-screen: 768px;
+// $md-screen: 992px;
+// $lg-screen: 1200px;

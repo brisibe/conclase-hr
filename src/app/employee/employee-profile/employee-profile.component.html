@@ -1,0 +1,61 @@
+<div class="m-4  min-vh-100">
+  <div fxLayout="column" fxLayoutGap="10px" class="flex-md-row" >
+      <mat-card class="profile-section" *ngIf="employee">
+          <div class="container header shadow-sm h-md-50">
+              <div class="w-100 h-100 py-4 image-container" fxLayout="row" fxLayoutAlign="start end"  >
+
+                   <div class="bg-dark rounded w-25 h-50 image-container" >
+                           <mat-icon *ngIf="!employee.value.avatar">account_circle</mat-icon>
+                           <img *ngIf="employee.value.avatar" src= {{employee.value.avatar}} class="h-100 w-100 overflow-hidden rounded" >
+                         
+                    <label class="file-upload">
+                        <mat-icon>add</mat-icon>
+                      <input type="file" (change)="uploadImage($event)">
+                    </label>  
+                   </div> 
+               <div class="details mx-4 h-75 ">
+                       <h6 class="fs-6">{{employee.value.firstName}} {{employee.value.lastName}}</h6>
+                       <p class="text-opacity-75 m-0  small">{{employee.value.role}}</p>
+                       <p class="text-opacity-75 m-0 small">{{employee.value.email}}</p>
+                       <div class="d-flex">
+                           <mat-icon class="mat-icon-phone">phone</mat-icon>
+                           <mat-icon class="mat-icon-email">email</mat-icon>
+                       </div>
+                </div>
+              </div>
+          </div>
+          
+          <div class="card-details mt-5 ">
+              <p class="fs-5 fw-bold" >
+                  Employee Profile
+              </p>
+            
+
+    <p class="opacity-75 pt-2">
+Just a random summary about a conclase staff, documenting how their daily
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam fugiat
+  earum ullam maxime obcaecati dignissimos voluptates, eum dolores non velit.
+   Sunt nostrum facilis velit cum fuga, similique beatae inventore nulla! </p>
+
+          </div>
+          
+      </mat-card>
+    
+      <div class=" w-100 info-section bg-white p-4" *ngIf="employee">
+          <p class="px-4" >Payment History</p>
+          <mat-divider>
+          </mat-divider>
+          
+          <p class="fs-6 mt-4" *ngIf="!empReceipts">No payments have been made.</p>
+          <div class="mt-4 px-1" *ngIf="empReceipts" >
+              <mat-list *ngFor="let payment of empReceipts">
+                  <mat-list-item><p class="small">Was paid <span class="text-success fw-bold">{{payment.value.amount| currency:"&#8358;" }}</span> - <span class="text-muted mat-caption">{{convertTimeStamp(payment.value.timestamp)}}</span></p>
+                  </mat-list-item>
+                  
+                </mat-list>            
+            </div>
+      </div>
+  </div>
+     
+
+</div>

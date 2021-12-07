@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "email": "hr@conclase.com",
+      "password": "$2a$10$wcCkHCTFxnfpkbhrFxZPHOZ9IITnM49AgXEJ/HH1HDO5ZAAObYJB6",
+      "username": "Adebola",
+      "position": "Human Resources",
+      "id": 3
+    },
+    {
+      "email": "ceo@conclase.com",
+      "password": "$2a$10$nxohhAy05CuGZq1uqnL7he/hsL10jxBFktn8MDWNxCK8PbyKJix.O",
+      "username": "Possi",
+      "position": "Human Resources",
+      "id": 4
+    },
+    {
+      "email": "eben@gmail.com",
+      "password": "$2a$10$zI1ImSM5fpk7D.W4yVXzwuT00p8oDVOPuoNu1gEwFU7aNsNQo2P1.",
+      "username": "Ebenezer",
+      "position": "Human Resources",
+      "id": 5
+    }
+  ],
+  "employees": [
+    {
+      "value": {
+        "firstName": "Ayoola",
+        "lastName": "Hameed",
+        "email": "hameed@gmail.com",
+        "gender": "male",
+        "role": "Frontend Developer",
+        "salary": 300000,
+        "avatar": "https://i.pravatar.cc/150"
+      },
+      "id": "tIBoEyG"
+    },
+    {
+      "value": {
+        "firstName": "Joseph",
+        "lastName": "Brisibe",
+        "email": "Testing@gmail.com",
+        "gender": "male",
+        "role": "Frontend Developer",
+        "salary": 300000,
+        "avatar": "https://i.pravatar.cc/150"
+      },
+      "id": "k5bsvZl",
+      "paymentStatus": "Paid"
+    },
+    {
+      "value": {
+        "firstName": "Lateef",
+        "lastName": "Noah",
+        "email": "noah@gmail.com",
+        "gender": "male",
+        "role": "Backend Developer",
+        "salary": 300000,
+        "avatar": "https://i.pravatar.cc/150"
+      },
+      "id": "URftJCJ"
+    },
+    {
+      "value": {
+        "firstName": "Kudus",
+        "lastName": "John",
+        "email": "josh@gmail.com",
+        "gender": "male",
+        "role": "Backend Developer",
+        "salary": 200000,
+        "avatar": "https://i.pravatar.cc/150"
+      },
+      "id": "LHWxFKk"
+    },
+    {
+      "value": {
+        "firstName": "Onome",
+        "lastName": "Frazer",
+        "email": "frazer@gmail.com",
+        "gender": "female",
+        "role": "Business Analyst",
+        "salary": 440000,
+        "avatar": "https://i.pravatar.cc/150"
+      },
+      "id": "NyGNEX4"
+    }
+  ],
+  "payment-receipts": [
+    {
+      "value": {
+        "reference": "ref-29491619266380",
+        "amount": 300000,
+        "timestamp": "2021-12-02T13:51:12.758Z",
+        "beneficiary": {
+          "id": "k5bsvZl",
+          "firstName": "Joseph",
+          "lastName": "Brisibe"
+        }
+      },
+      "id": 1
+    }
+  ]
+}

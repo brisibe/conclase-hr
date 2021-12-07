@@ -1,0 +1,72 @@
+<h1 class="mat-h2">Dashboard</h1>
+<mat-divider></mat-divider>
+<div class="grid-container mt-4" >
+
+
+  <div class=" card-wrapper w-75  d-flex  flex-column flex-md-nowrap flex-md-row" fxLayoutGap="5px" >
+      <mat-card class="dashboard-card mat-elevation-z1">
+        <mat-card-header>
+          <mat-card-title class="fs-6">
+            Projects
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <line-chart></line-chart>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title class="fs-6">
+            Employees
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+         <pie-chart></pie-chart>
+         </mat-card-content>
+      </mat-card>
+  </div>
+
+  <div class="side-container  p-1">
+
+    <div class="recent-activities">
+      <p class="px-4 pt-4">Recent Activities</p>
+      <mat-divider>
+      </mat-divider>
+
+      <mat-list  *ngFor="let payment of payments"  >
+          <mat-list-item  class="bg-white">
+            <img matListAvatar src="https://i.pravatar.cc/1500" alt= ""/>
+            <h3 style="cursor: pointer;" matLine routerLink="/employees/{{payment.value.beneficiary?.id}}"> {{payment.value.beneficiary?.firstName}} {{payment.value.beneficiary?.lastName}} was paid <span class="text-success fw-bold">{{payment.value.amount | currency:"&#8358;"}}</span></h3>
+            <p matLine>
+              <span class="text-opacity-75 text-muted small">{{convertToStringDate(payment.value.timestamp)}} </span>
+            </p>
+          </mat-list-item>
+
+          </mat-list>
+    </div>
+
+    <div class="small-cards">
+      <mat-card class="mat-elevation-z1">
+          <mat-card-header>   Total Employees
+          </mat-card-header>
+          <mat-card-content class="d-flex justify-content-center align-items-center h-75">
+            <p class="mat-display-3 fw-bold">{{employeeCount}}</p>
+          </mat-card-content>
+
+      </mat-card>
+      <mat-card class="mat-elevation-z1">
+          <mat-card-header>   Total Projects
+          </mat-card-header>
+          <mat-card-content class="d-flex justify-content-center align-items-center h-75">
+            <p class="mat-display-3 fw-bold">{{totalProjectCount}}</p>
+          </mat-card-content>
+
+
+      </mat-card>
+
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.avatar {
+  // vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.user-info {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+  // align-items: center;
+
+  p {
+    padding-top: 16px;
+  }
+}

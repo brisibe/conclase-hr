@@ -1,0 +1,7 @@
+<mat-toolbar-row class="mt-4 d-flex justify-content-between">
+    <h5>Employees</h5>
+    <button mat-raised-button color="primary" (click)="openDialog()" >Add Employee </button>
+</mat-toolbar-row>
+<mat-divider></mat-divider>
+
+ <employee-list [employeelist]="employees"></employee-list>

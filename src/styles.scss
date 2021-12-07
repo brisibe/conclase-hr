@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/theming";
+@use "@angular/material" as mat;
+@import "~bootstrap/scss/bootstrap";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@include mat.core(
+  mat.define-typography-config($font-family: '"DM Sans", sans-serif;')
+);

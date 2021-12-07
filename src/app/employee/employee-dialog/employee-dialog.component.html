@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Add Employee</h2>
+<!-- <p class="text-success">{{message}}</p> -->
+<form [formGroup]="formData" (ngSubmit)=onAddSubmit() autocomplete="off" class="w-100">
+ <mat-card-content class="d-flex flex-column">
+              <mat-form-field>
+                <input matInput placeholder="First name" formControlName="firstName"  >
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Last name" formControlName="lastName" >
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email" >
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender">
+                  <mat-option value="male">Male</mat-option>
+                  <mat-option value="female">Female</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Role</mat-label>
+                <mat-select formControlName="role">
+                  <mat-option value="Frontend Developer">Frontend Developer</mat-option>
+                  <mat-option value="Backend Developer">Backend Developer</mat-option>
+                  <mat-option value="Android Developer">Android Developer</mat-option>
+                  <mat-option value="Product Manager">Project Manager</mat-option>
+                  <mat-option value="Business Analyst">Business Analyst</mat-option>
+                  <mat-option value="Human Resources">Human Resources</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Salary" type="number" formControlName="salary">
+              </mat-form-field>
+
+    </mat-card-content>
+            <mat-card-actions>
+              <button mat-button mat-dialog-close>Cancel</button>
+              <button mat-raised-button color="primary"  type="submit" [disabled]="formData.invalid || isLoading">Add</button>
+            </mat-card-actions>
+</form>
