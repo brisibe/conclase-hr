@@ -23,7 +23,7 @@ export class EmployeeDialogComponent implements OnInit {
 
 
 
-    constructor(private fb: FormBuilder, private employeeService: EmployeeService, private router: Router, public dialog: MatDialog) {
+    constructor(private fb: FormBuilder, private employeeService: EmployeeService, public dialog: MatDialog) {
         this.formData = this.fb.group({
             firstName: [null, Validators.required],
             lastName: [null, Validators.required],
@@ -43,15 +43,9 @@ export class EmployeeDialogComponent implements OnInit {
 
     onAddSubmit() {
         this.isLoading = true;
-        this.employeeService.addEmployee(this.formData.value).subscribe((data) => {
+        this.employeeService.addEmployee(this.formData.value).subscribe(() => {
             this.isLoading = false
             this.dialog.closeAll()
         })
     }
-
-    updateEmployees() {
-        this.updatedEmployees.emit(this.updatedEmployeeList);
-    }
-
-
 }

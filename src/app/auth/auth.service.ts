@@ -6,10 +6,7 @@ import { filter, catchError, } from 'rxjs/operators';
 import { API_ENDPOINT } from '../core/configs/configs';
 
 
-// "id": "1234599",
-//       "email": "hr@conclase.com",
-//       "password": "conclase",
-//       "isAdmin": true
+
 interface Users {
     id: string,
     email: string,
@@ -24,11 +21,6 @@ interface Register {
 }
 
 
-interface Login {
-    username: string,
-    email: string,
-    password: string
-}
 
 
 @Injectable({ providedIn: 'root' })

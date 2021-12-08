@@ -28,9 +28,7 @@ export class PaymentPaystackButtonComponent implements OnInit {
 
   constructor(private receipt: GenerateReceiptService, private employee: EmployeeService, private refreshPage: RefreshPageService) { }
 
-  paymentInit() {
-    console.log('Payment initialized');
-  }
+
 
   paymentDone(ref: any) {
     if (ref.status === 'success') {
@@ -48,7 +46,7 @@ export class PaymentPaystackButtonComponent implements OnInit {
           lastName: this.lastName
         }
       }).subscribe(res => {
-        console.log(console.log("receipt generated"))
+        console.log("receipt generated")
       })
 
       this.employee.updateEmployee(this.userId, { paymentStatus: 'Paid' }).subscribe(res => this.refreshPage.refresh())

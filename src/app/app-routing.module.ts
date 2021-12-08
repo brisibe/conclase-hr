@@ -12,12 +12,12 @@ import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
-    path: "login",
-    component: LoginComponent
+    path: "login", component: LoginComponent
+    // loadChildren : () => import('./auth/auth.module').then((m)=> m.AuthModule)
   },
   {
     path: "", component: LayoutComponent,
-    canActivateChild: [AuthGuard],
+    // canActivateChild: [AuthGuard],
     children: [
       {
         path: "", redirectTo: '/dashboard', pathMatch: 'full'
@@ -25,18 +25,15 @@ const routes: Routes = [
       {
         path: "dashboard",
         component: DashboardComponent
+        // loadChildren: () => import("./dashboard/dashboard.module").then((m)=>m.DashboardModule)
       },
 
       {
-        path: 'employees', component: EmployeeComponent
+        path: 'employees', loadChildren: () => import('./employee/employee.module').then((m)=>m.EmployeeModule)
+
       },
       {
-        path: 'employees/:employeeid', component: EmployeeProfileComponent
-      }
-      ,
-
-      {
-        path: 'payments', component: PaymentComponent
+        path: 'payments', loadChildren: () => import('./payment/payment.module').then((m)=> m.PaymentModule)
       },
 
       {
