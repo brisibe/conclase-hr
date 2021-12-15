@@ -1,5 +1,4 @@
-<mat-sidenav-container  class="sidenav-container">
-
+<mat-sidenav-container  class="sidenav-container"  >
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -7,18 +6,28 @@
       [autoFocus]="true"
       mt="4"
       >
+ <div  class="logo" ><img src="assets/logo.svg" width="125px" height="30px" alt="logo"></div>
     <mat-nav-list class="navlinks d-flex flex-column justify-content-between" >
-      <div>
-        <a mat-list-item routerLink="/dashboard">Dashboard</a>
-        <a mat-list-item routerLink="/employees">Employees</a>
-        <a mat-list-item routerLink="/payments">Payments</a> 
+      <div class= "justify-content-start" >
+        <div *ngFor="let link of sidebarLinks" class="link">
+        <span>
+          <img src={{link.icon}} >
+        </span>
+        <a  routerLink={{link.route}} >{{link.title}}</a>
+        </div>
+<!--        <a mat-list-item routerLink="/employees">Employees</a>-->
+<!--        <a mat-list-item routerLink="/payments" >Payments</a>-->
       </div>
-      <a mat-list-item (click)="logout()">Logout</a> 
+      <div class="link" style="cursor: pointer">
+      <img src="assets/login-icon.svg" >
+      <a  (click)="logout()">Logout</a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content style="background-color: #F5F5FA">
 
-    <mat-toolbar class="nav d-flex justify-content-between mat-elevation-z2 shadow-sm" >
+    <mat-toolbar sticky="true" class="nav d-flex justify-content-between mat-elevation-z2 shadow-sm" style="background-color: #fff">
+    <div>
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -27,11 +36,14 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ConclaseHr</span>
-       <avatar ></avatar>
+    </div>
+<!--      <div style="display: flex;align-items: center; justify-content: space-between"><mat-slide-toggle [formControl]="toggleControl" >-->
+<!--        </mat-slide-toggle>-->
+      <avatar ></avatar>
+<!--      </div>-->
     </mat-toolbar>
-
-    <div class="container">
+<!--to do height not increasing auto-->
+    <div style="margin-left: 20px; margin-right: 20px; margin-top: 20px; height:auto ">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

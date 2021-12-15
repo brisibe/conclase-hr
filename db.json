@@ -20,6 +20,13 @@
       "username": "Ebenezer",
       "position": "Human Resources",
       "id": 5
+    },
+    {
+      "email": "joseph@gmail.com",
+      "password": "$2a$10$FJCHwq9fiRU8PZdcIVvbCeva8dbkGc/EaEG0LbjOUlKgkZiHyUlSm",
+      "username": "Joseph",
+      "position": "Human Resources",
+      "id": 6
     }
   ],
   "employees": [
@@ -33,7 +40,8 @@
         "salary": 300000,
         "avatar": "https://i.pravatar.cc/150"
       },
-      "id": "tIBoEyG"
+      "id": "tIBoEyG",
+      "paymentStatus": "Paid"
     },
     {
       "value": {
@@ -58,7 +66,8 @@
         "salary": 300000,
         "avatar": "https://i.pravatar.cc/150"
       },
-      "id": "URftJCJ"
+      "id": "URftJCJ",
+      "paymentStatus": "Paid"
     },
     {
       "value": {
@@ -83,6 +92,19 @@
         "avatar": "https://i.pravatar.cc/150"
       },
       "id": "NyGNEX4"
+    },
+    {
+      "value": {
+        "firstName": "Kingsley",
+        "lastName": "Onome",
+        "email": "kin@gmail.com",
+        "gender": "male",
+        "role": "Android Developer",
+        "salary": 200000,
+        "avatar": "https://i.pravatar.cc/150"
+      },
+      "id": "EE4nOP3",
+      "paymentStatus": "Paid"
     }
   ],
   "payment-receipts": [
@@ -98,6 +120,124 @@
         }
       },
       "id": 1
+    },
+    {
+      "value": {
+        "reference": "ref-6080439338331",
+        "amount": 300000,
+        "timestamp": "2021-12-08T12:55:17.238Z",
+        "beneficiary": {
+          "id": "tIBoEyG",
+          "firstName": "Ayoola",
+          "lastName": "Hameed"
+        }
+      },
+      "id": 2
+    },
+    {
+      "value": {
+        "reference": "ref-63056102633231",
+        "amount": 300000,
+        "timestamp": "2021-12-10T15:27:48.354Z",
+        "beneficiary": {
+          "id": "URftJCJ",
+          "firstName": "Lateef",
+          "lastName": "Noah"
+        }
+      },
+      "id": 3
+    },
+    {
+      "value": {
+        "reference": "ref-15139073363030",
+        "amount": 200000,
+        "timestamp": "2021-12-13T12:38:50.804Z",
+        "beneficiary": {
+          "id": "EE4nOP3",
+          "firstName": "Kingsley",
+          "lastName": "Onome"
+        }
+      },
+      "id": 4
+    }
+  ],
+  "clients": [
+    {
+      "value": {
+        "name": "Interswitch Group",
+        "industry": "Financial Services",
+        "photo": "assets/client/Interswitch.svg",
+        "projects": [
+          {}
+        ]
+      },
+      "id": 1
+    },
+    {
+      "value": {
+        "name": "Access Bank PLC",
+        "industry": "Banking",
+        "photo": "assets/client/Access.svg",
+        "projects": [
+          {}
+        ]
+      },
+      "id": 2
+    },
+    {
+      "value": {
+        "name": "9mobile",
+        "industry": "Telecommunications",
+        "photo": "assets/client/9mobile.svg",
+        "projects": [
+          {}
+        ]
+      },
+      "id": 3
+    },
+    {
+      "value": {
+        "name": "Bet9ja",
+        "industry": "Sports",
+        "photo": "assets/client/Bet9ja.svg",
+        "projects": [
+          {}
+        ]
+      },
+      "id": 4
+    },
+    {
+      "value": {
+        "name": "Fidelity Bank",
+        "industry": "Banking",
+        "photo": "assets/client/Fidelity.svg",
+        "projects": [
+          {}
+        ]
+      },
+      "id": 6
+    },
+    {
+      "value": {
+        "name": "Polaris Bank",
+        "industry": "Banking",
+        "photo": "assets/client/Polaris.svg",
+        "projects": [
+          {}
+        ]
+      },
+      "id": 7
+    },
+    {
+      "value": {
+        "name": "Union Bank PLC",
+        "industry": "Banking",
+        "photo": "assets/client/Union.svg",
+        "projects": [
+          {}
+        ]
+      },
+      "id": 8
     }
   ]
 }

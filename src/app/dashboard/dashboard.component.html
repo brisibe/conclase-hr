@@ -1,72 +1,54 @@
-<h1 class="mat-h2">Dashboard</h1>
-<mat-divider></mat-divider>
-<div class="grid-container mt-4" >
+<div class="header"> <p>Dashboard</p> <span class="text-muted">{{date}}</span></div>
+<div class="content-wrapper mt-4" >
 
+  <div class="inner-wrapper">
+   <div class="card-wrapper">
+     <mat-card class="profit-card cardd">
+        <img src="assets/profit-icon.svg" height="24px" width="36px" alt>
+        <div class="content">
+          <p>This week</p>
+          <span> &#8358;4,000,000</span>
+        </div>
+     </mat-card>
 
-  <div class=" card-wrapper w-75  d-flex  flex-column flex-md-nowrap flex-md-row" fxLayoutGap="5px" >
-      <mat-card class="dashboard-card mat-elevation-z1">
-        <mat-card-header>
-          <mat-card-title class="fs-6">
-            Projects
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <line-chart></line-chart>
-        </mat-card-content>
-      </mat-card>
+     <mat-card class="employee-card cardd">
+       <img src="assets/employee-card-icon.svg" height="24px" width="36px" alt>
+       <div class="content">
+         <div><span class="mat-display-1">{{employeeCount}}</span> Staffs</div>
+       </div>
+     </mat-card>
+     <mat-card class="client-card cardd">
+       <img src="assets/client-card-icon.svg" height="24px" width="36px" alt>
+       <div class="content">
+         <div><span class="mat-display-1">7</span> Clients</div>
+       </div>
+     </mat-card>
+   </div>
+  <div class="chart-wrapper">
+    <mat-card class="pie-chart">
+      <p>Empoyee roles</p>
+      <pie-chart></pie-chart>
+    </mat-card>
+    <mat-card class="line-chart">
+      <p>Projects per Month</p>
+      <line-chart></line-chart>
+    </mat-card>
+  </div>
+  </div>
+  <div class="inner-wrapper2">
+    <p style="font-size: .9rem; margin: 10px;">Recent Activities</p>
 
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title class="fs-6">
-            Employees
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-         <pie-chart></pie-chart>
-         </mat-card-content>
-      </mat-card>
+          <mat-list  *ngFor="let payment of payments"   >
+              <mat-list-item  class="bg-white" style="border-left: solid 4px #272B8F; height:auto; border-bottom-left-radius: 5px; border-top-left-radius: 5px; ">
+<!--                <img matListAvatar src="https://i.pravatar.cc/1500" alt= ""/>-->
+                <p style="cursor: pointer; font-size: 0.8rem" matLine routerLink="/employees/{{payment.value.beneficiary?.id}}"> {{payment.value.beneficiary?.firstName}} {{payment.value.beneficiary?.lastName}} was paid <span class=" fw-bold" style="color:#267420 ">{{payment.value.amount | currency:"&#8358;"}}</span></p>
+                <p matLine>
+                  <span class="text-opacity-75 text-muted small" style="font-size: 0.7rem">{{convertToStringDate(payment.value.timestamp)}} </span>
+                </p>
+              </mat-list-item>
+
+              </mat-list>
   </div>
 
-  <div class="side-container  p-1">
-
-    <div class="recent-activities">
-      <p class="px-4 pt-4">Recent Activities</p>
-      <mat-divider>
-      </mat-divider>
-
-      <mat-list  *ngFor="let payment of payments"  >
-          <mat-list-item  class="bg-white">
-            <img matListAvatar src="https://i.pravatar.cc/1500" alt= ""/>
-            <h3 style="cursor: pointer;" matLine routerLink="/employees/{{payment.value.beneficiary?.id}}"> {{payment.value.beneficiary?.firstName}} {{payment.value.beneficiary?.lastName}} was paid <span class="text-success fw-bold">{{payment.value.amount | currency:"&#8358;"}}</span></h3>
-            <p matLine>
-              <span class="text-opacity-75 text-muted small">{{convertToStringDate(payment.value.timestamp)}} </span>
-            </p>
-          </mat-list-item>
-
-          </mat-list>
-    </div>
-
-    <div class="small-cards">
-      <mat-card class="mat-elevation-z1">
-          <mat-card-header>   Total Employees
-          </mat-card-header>
-          <mat-card-content class="d-flex justify-content-center align-items-center h-75">
-            <p class="mat-display-3 fw-bold">{{employeeCount}}</p>
-          </mat-card-content>
-
-      </mat-card>
-      <mat-card class="mat-elevation-z1">
-          <mat-card-header>   Total Projects
-          </mat-card-header>
-          <mat-card-content class="d-flex justify-content-center align-items-center h-75">
-            <p class="mat-display-3 fw-bold">{{totalProjectCount}}</p>
-          </mat-card-content>
-
-
-      </mat-card>
-
-    </div>
-
-
-  </div>
 </div>
+

@@ -15,21 +15,25 @@ export class PieChartComponent implements OnInit {
     maintainAspectRatio: false,
     legend: {
       labels: {
-        boxWidth: 2,
-        fontSize: 8,
+        boxWidth: 4,
+        fontSize: 10,
+        // padding: 2,
         fontColor: "#6c757d"
       },
-      align: "end"
-    }
+      align: "end",
+
+    },
+
   };
 
   //mock employee roles
-  public pieChartLabels: Label[] = ['Frontend', 'Backend', 'Business Analyst', 'UI/UX' ];
+  public pieChartLabels: Label[] = ['Frontend', 'Backend', 'Business Analyst', 'Human Resource' ];
   public pieChartData: SingleDataSet = [5, 2, 3, 2];
   public pieChartType: ChartType = 'pie';
-  public pieChartLegend = false;
+  // public pieChartLegend = false;
+  public pieChartLegend = true;
   public pieChartPlugins = [];
-  public pieChartColors: Array<any> = [{backgroundColor: ['#633EBB', '#BC6CCA', '#F13C59','#F2B360' ]}]
+  public pieChartColors: Array<any> = [{backgroundColor: ['#24C221', '#C2218B', '#272B8F','#C28221' ]}]
 
 
   constructor() {

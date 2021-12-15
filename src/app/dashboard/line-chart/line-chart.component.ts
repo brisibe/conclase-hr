@@ -49,8 +49,8 @@ export class LineChartComponent implements OnInit {
   };
   public lineChartColors: Color[] = [
     {
-      borderColor: '#0473d8',
-      backgroundColor: '#d2e9fe',
+      borderColor: '#272B8F',
+      backgroundColor: '#C3D4E3',
       pointRadius : 2
 
 

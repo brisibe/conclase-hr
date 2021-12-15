@@ -1,10 +1,9 @@
 import { ConvertStringToDateService } from './../core/services/convert-string-to-date.service';
 import { GenerateReceiptService } from './../payment/generate-receipt.service';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { EmployeeService } from '../employee/employee.service';
 import { totalProjectsCompletedMockData } from "./line-chart/line-chart.component"
+import * as moment from 'moment'
 
 @Component({
   selector: 'app-dashboard',
@@ -16,13 +15,16 @@ export class DashboardComponent implements OnInit {
   payments: any;
   employeeCount: number;
   totalProjectCount: number;
+  date: any;
 
   constructor(private receipts: GenerateReceiptService, private employeeService: EmployeeService, private convertToDate: ConvertStringToDateService) { }
 
   ngOnInit() {
+    this.date = moment().format('dddd, Do MMMM, YYYY');
     this.getReceipts();
     this.getEmployees();
     this.sumTotalProjectPerMonth();
+
   }
 
   getReceipts() {

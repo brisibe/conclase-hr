@@ -22,7 +22,7 @@ export class EmployeeProfileComponent implements OnInit {
   constructor(private empService: EmployeeService, private route: ActivatedRoute, private receipts: GenerateReceiptService, private convertToDate: ConvertStringToDateService) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['employeeid']
+    this.id = this.route.snapshot.params['employeeId']
 
     this.empService.getEmployee(this.id).subscribe(res => {
       this.employee = res

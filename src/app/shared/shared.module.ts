@@ -10,16 +10,15 @@ import {MatIconModule} from "@angular/material/icon";
 import { HttpClientModule } from '@angular/common/http';
 import {LayoutComponent} from "./layout/layout.component";
 import { PageNotFoundComponent } from './page-not-found/notfount.component';
-import { SidebarItemsComponent } from './layout/sidebar-items/sidebar-items.component';
 import { AvatarComponent } from './layout/avatar/avatar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from "@angular/material/list";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {RouterModule, Routes} from "@angular/router";
-import { MatSelectModule } from '@angular/material/select';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
  const routes : Routes = [
-   {path: "" , component : LayoutComponent}
+   { path: "" , component : LayoutComponent }
 ]
 
 @NgModule({
@@ -31,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
 
+    MatSlideToggleModule,
     MatCardModule,
     MatButtonModule,
     MatDividerModule,
@@ -43,6 +43,6 @@ import { MatSelectModule } from '@angular/material/select';
     MatToolbarModule,
 
   ],
-  exports: [RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, MatCardModule, MatButtonModule, MatDividerModule, MatMenuModule, MatIconModule, MatInputModule, MatListModule, ]
+  exports: [RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, MatCardModule, MatButtonModule, MatDividerModule, MatMenuModule, MatIconModule, MatInputModule, MatListModule ]
 })
 export class SharedModule { }
