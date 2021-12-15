@@ -1,0 +1,17 @@
+<div class="container">
+   
+    <div class="card-container">
+           <div  *ngFor="let client of clients" class="client-card" >
+            <div class="img-container">
+                <img class="card-image" src={{client.value.photo}}>
+            </div>   
+               <div class="card-details">
+                   <p>{{client.value.name}}</p>
+                   <span class="text-muted">{{client.value.industry}}</span>
+               </div>
+           </div>
+         
+    </div>
+</div>
+
+

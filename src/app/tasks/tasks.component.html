@@ -1,0 +1,39 @@
+<div class="header"> <h6>Tasks</h6>  <div>
+</div></div>
+  <form [formGroup]="taskForm" (ngSubmit)="addTask()" style="margin-top:20px; margin-left:28px" autocomplete="off">
+ <mat-form-field style="padding-right:20px" >
+  <input matInput formControlName="task" type="text"  placeholder="Input task" >
+ </mat-form-field>
+  <button mat-raised-button type="submit" class="mat-raised-button mat-accent" [disabled]="taskForm.invalid" >Add Task</button>
+  </form>
+
+<div class="d-flex flex-column justify-space-between mt-4">
+ <div class="container vh-100 d-flex w-100 tasks" style="gap: 50px">
+
+   <div class="w-100">
+     <h6>Todo</h6>
+     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo"
+          [cdkDropListConnectedTo]="[doingList,doneList]" class="list" (cdkDropListDropped)="drop($event)">
+       <div class="list-item todo" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+     </div>
+   </div>
+
+   <div class="w-100">
+     <h6>Doing</h6>
+     <div cdkDropList #doingList="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[todoList,doneList]" class="list" (cdkDropListDropped)="drop($event)">
+       <div class="list-item doing" *ngFor="let item of doing" cdkDrag>{{item}}</div>
+     </div>
+   </div>
+
+
+   <div class="w-100">
+     <h6>Done</h6>
+     <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
+          [cdkDropListConnectedTo]="[todoList,doingList]" class="list" (cdkDropListDropped)="drop($event)">
+       <div class="list-item done" *ngFor="let item of done" cdkDrag>{{item}}</div>
+     </div>
+   </div>
+ </div>
+
+
+</div>
